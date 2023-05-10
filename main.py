@@ -2,7 +2,6 @@
 Задача №1
 Необходимо реализовать пользовательские команды, которые будут выполнять следующие функции:
 
-p – people – команда, которая спросит номер документа и выведет имя человека, которому он принадлежит;
 s – shelf – команда, которая спросит номер документа и выведет номер полки, на которой он находится;
 Правильно обработайте ситуации, когда пользователь будет вводить несуществующий документ.
 l– list – команда, которая выведет список всех документов в формате passport "2207 876234" "Василий Гупкин";
@@ -21,3 +20,35 @@ directories = {
     '2': ['10006'],
     '3': []
     }
+
+def people(document, number):
+    for folder in document:
+        if folder["number"] == number:
+            print(f'Имя владельца документа: {folder["name"]}')
+        else:
+            print('Такого документа нет')
+
+def shelf(directories, number):
+    for directory, numbers in directories.items():
+        if numbers.count(number) == True:
+            print(f'Этот документ лежит на полке {directory}')
+    else:
+        print("Такого документа нет ни на одной полке")
+
+def list():
+
+
+
+# def program():
+#     input(f"Введите команду p / s / l / a : {comand}") 
+#     document = ''
+#     comand = ''
+#     if comand == 'p':
+#         input(f"Введите номер документа: {document}")
+#         people(documents, document)
+#     elif comand == 's':
+
+#     elif comand == 'l':
+
+#     elif comand == 'a':
+
